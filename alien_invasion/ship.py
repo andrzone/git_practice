@@ -1,7 +1,7 @@
 import pygame
 
 class Ship():
-	# класс для управления кораблем
+	# класс для управления кораблем (управляет всеми атрибутами корабля)
 	def __init__(self, ai_game):
 		# инициализирует корбаль и задает его начальную позицию
 		self.screen = ai_game.screen
@@ -12,7 +12,18 @@ class Ship():
 		self.rect = self.image.get_rect()
 
 		# каждый новый корабль у нижнего центра экрана
-		self.rect.midbottom = self.screen_rect.center
+		self.rect.midbottom = self.screen_rect.midbottom
+
+		# флаг перемещения
+		self.moving_right = False
+		self.moving_left = False
+
+	def update(self):
+		# если moving_right == True
+		if self.moving_right:
+			self.rect.x +=1
+		if self.moving_left:
+			self.rect.x -=1
 
 	def blitme(self):
 		# рисует корабль в текущей позиции
