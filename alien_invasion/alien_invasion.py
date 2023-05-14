@@ -44,9 +44,25 @@ class AlienInvasion:
 			self.ship.moving_right = True
 		elif event.key == pygame.K_LEFT:
 			self.ship.moving_left = True
+
+		elif event.key == pygame.K_a:
+			self.ship.image = self.ship.image_left
+			self.ship.moving_left = True
+		elif event.key == pygame.K_d:
+			self.ship.image = self.ship.image_right
+			self.ship.moving_right = True
+		elif event.key == pygame.K_s:
+			self.ship.image = self.ship.image_down
+			self.ship.moving_down = True
+		elif event.key == pygame.K_w:
+			self.ship.image = self.ship.image_up
+			self.ship.moving_up = True
+
+
 		# закрытие окна при нажатии на q
 		elif event.key == pygame.K_q:
 			sys.exit()
+
 
 	def _check_keyup_events(self, event):
 		# реагирует на отпускание клавиш
@@ -54,6 +70,20 @@ class AlienInvasion:
 			self.ship.moving_right = False
 		elif event.key == pygame.K_LEFT:
 			self.ship.moving_left = False
+
+		elif event.key == pygame.K_a:
+			# self.ship.image = self.ship.image_up
+			self.ship.moving_left = False
+		elif event.key == pygame.K_d:
+			# self.ship.image = self.ship.image_up
+			self.ship.moving_right = False
+		elif event.key == pygame.K_s:
+			# self.ship.image = self.ship.image_up
+			self.ship.moving_down = False
+		elif event.key  == pygame.K_w:
+			# self.ship.image = self.ship.image_up
+			self.ship.moving_up = False
+
 
 	def _update_screen(self):
 		# Заполняем цветом фон, вызываем метод fill() с одним аргументом - цвет фона
