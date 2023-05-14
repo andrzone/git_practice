@@ -16,6 +16,9 @@ class AlienInvasion:
 		self.ship = Ship(self)
 		# управляем частотой кадров
 		self.clock = pygame.time.Clock()
+		# Группа для хранения и прорисовки всех летящих снарядов
+		# Список с расширенным функционалом
+		self.bullets = pygame.sprite.Group()
 
 	def run_game(self):
 		# Запуск основного кода игры
@@ -23,6 +26,8 @@ class AlienInvasion:
 			self._check_events()
 			# При каждом проходе цикла обновляется позиция корабля
 			self.ship.update()
+			# При каждом проходе обновляется позиция снарядов
+			self.bullets.update()
 			# При каждом проходе цикла перерисовывается экран.
 			self._update_screen()
 
