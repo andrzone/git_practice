@@ -6,7 +6,7 @@ class Ship():
 		# инициализирует корбаль и задает его начальную позицию
 		self.screen = ai_game.screen
 		self.settings = ai_game.settings
-		self.screen_rect = ai_game.screen.get_rect()
+		self.screen_rect = self.screen.get_rect()
 
 		# загружает изображение корабля и получает прямоугольник
 		self.image = pygame.image.load('images/ship2.bmp')
@@ -18,7 +18,7 @@ class Ship():
 		self.image_right = pygame.transform.rotate(self.image, -90)
 
 		# каждый новый корабль у нижнего центра экрана midbottom
-		self.rect.center = self.screen_rect.center
+		self.rect.bottom = self.screen_rect.bottom
 
 		# флаг перемещения
 		self.moving_right = False
