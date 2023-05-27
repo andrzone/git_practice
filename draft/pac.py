@@ -15,13 +15,16 @@ class Pac():
 		# получаем ссылку на размеры этой области в виде /экземпляра класса Rect
 		self.rect = self.image.get_rect()
 		# каждый новый pac будет выравниваться в середине экрана
-		self.rect.center = self.screen_rect.center
+		self.rect.midleft = self.screen_rect.midleft
 
 		# сохранение вещественной координаты цетра героя
 		self.x = float(self.rect.x)
+		self.y = float(self.rect.y)
 		# флаг перемещения
 		self.moving_right = False
 		self.moving_left = False
+		self.moving_up = False
+		self.moving_down = False
 
 	def blitme(self):
 		"""Рисует изображение в текущей позиции"""
@@ -33,6 +36,11 @@ class Pac():
 			self.x += self.settings.pac_speed
 		if self.moving_left and self.rect.left > self.screen_rect.left:
 			self.x -= self.settings.pac_speed
+		if self.moving_up and self.rect.top > self.screen_rect.top:
+			self.y -= self.settings.pac_speed
+		if self.moving_down and self.rect.bottom < self.screen_rect.bottom:
+			self.y += self.settings.pac_speed
 
 		self.rect.x = self.x
+		self.rect.y = self.y
 

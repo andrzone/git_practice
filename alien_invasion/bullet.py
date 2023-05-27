@@ -17,7 +17,7 @@ class Bullet(Sprite):
 		self.rect.midtop = ai_game.ship.rect.midtop
 
 		# позиция снаряда хранится в вещественном формате
-		self.y = float(self.rect.y)ы
+		self.y = float(self.rect.y)
 
 	def update(self):
 		"""Перемещает снаряд вверх по экрану"""

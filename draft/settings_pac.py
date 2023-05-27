@@ -9,3 +9,11 @@ class Settings():
 		self.bg_heavenly_color = (127, 199, 255)
 		# настройки героя
 		self.pac_speed = 8.5
+		# настройки выстрела
+		self.bullet_speed = 5
+		self.bullet_width = 5
+		self.bullet_height = 5
+		self.bullet_color = (60,60,60)
+		self.bullet_allowed = 5
+
+		# circle = pygame.draw.circle(screen, (0, 0, 0), (100, 100), 15, 1)
