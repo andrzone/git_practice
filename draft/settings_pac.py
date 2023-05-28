@@ -10,7 +10,7 @@ class Settings():
 		# настройки героя
 		self.pac_speed = 8.5
 		# настройки выстрела
-		self.bullet_speed = 5
+		self.bullet_speed = 50
 		self.bullet_width = 5
 		self.bullet_height = 5
 		self.bullet_color = (60,60,60)

@@ -18,7 +18,7 @@ class Ship():
 		self.image_right = pygame.transform.rotate(self.image, -90)
 
 		# каждый новый корабль у нижнего центра экрана midbottom
-		self.rect.bottom = self.screen_rect.bottom
+		self.rect.midbottom = self.screen_rect.midbottom
 
 		# флаг перемещения
 		self.moving_right = False
@@ -48,3 +48,9 @@ class Ship():
 	def blitme(self):
 		# рисует корабль в текущей позиции
 		self.screen.blit(self.image, self.rect)
+
+
+	def center_ship(self):
+		"""Размещает корабль в центре нижней стороны"""
+		self.rect.midbottom = self.screen_rect.midbottom
+		self.x = float(self.rect.x)
